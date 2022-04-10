@@ -1,0 +1,29 @@
+<div class="row">
+<div class="col-md-8">
+    <div class="card">
+        <div class="card-header">Pirkiniu sarasas</div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item"  *ngFor="let vardas of vardai let i=index">
+                    {{i+1}}. {{ vardas}} <button class="btn btn-danger float-end" (click)="removeVardas(i)">Istrinti</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card">
+        <div class="card-header">Prideti nauja varda</div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="" class="form-label">Vardas:</label>
+                <input type="text" class="form-control" #newVardas> 
+                <!-- (keyUp, enter)='addNewVardas(newVardas)' -->
+                <!-- [(ngModel)]='newVardas'  -->
+            </div>
+            <button class="btn btn-success" (click)="addNewVardas(newVardas)">Prideti</button>
+        </div>
+    </div>
+</div>
+</div>
