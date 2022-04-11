@@ -1,0 +1,11 @@
+<div class="card mt-3">
+    <div class="card-body">
+        <h5>
+            {{ index+1 }}.
+            {{ task.name }},
+        </h5>
+    prioritetas: {{ task.priority }}
+    <hr>
+    <button class="btn btn-danger" (click)="deleteTask()">Istrinti</button>
+    </div>
+</div>
