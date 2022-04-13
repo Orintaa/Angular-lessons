@@ -6,6 +6,7 @@
         </h5>
     prioritetas: {{ task.priority }}
     <hr>
+    <a class="btn btn-success" [routerLink]="['./edit', index]">Redaguoti</a> &nbsp;
     <button class="btn btn-danger" (click)="deleteTask()">Istrinti</button>
     </div>
 </div>

@@ -5,17 +5,24 @@
             <div class="card-body">
                 <div class="mb-3">
                     <label for="" class="form-label">Pavadinimas:</label>
-                    <input type="text" class="form-control" #newName> 
+                    <input type="text" class="form-control" [(ngModel)]="name"> 
                 </div>
                 <div class="mb-3">
-                    <select class="form-label" #select>
+                    <select class="form-label" [(ngModel)]="priority">
                         <option value="skubu">Skubu</option>
                         <option value="neskubu">Neskubu</option>
                         <option value="ypac skubu">Ypac skubu</option>
                     </select>
                 </div>
-                <button class="btn btn-success" (click)="addNewTask (newName, select)">Prideti</button>
+                <button class="btn btn-success" (click)="update()">Atnaujinti</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- <option [selected]="svarba=='Svarbu'">Svarbu</option>
+<option [selected]="svarba=='Rutininis'">Rutininis</option>
+
+arba naudojant two-way-binding
+
+<select [(ngModel)]="prioritetas" > -->
