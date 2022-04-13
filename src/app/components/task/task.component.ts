@@ -18,15 +18,6 @@ export class TaskComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public addNewTask (name:HTMLInputElement,
-    priority:HTMLSelectElement){
-      if(name.value!=''){
-          this.taskService.add(name.value, priority.value);
-          name.value = '';
-          priority.value = '';
-      }
-    }
-
     public removeTask(i:number){
       this.tasks.splice(i, 1);
       this.taskService.save();
