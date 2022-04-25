@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-body">
+        {{ joke.joke }}
+        <hr>
+        <div>
+            Category: <b>{{ joke.category }}</b>
+        </div>
+        <div>
+            ID: <b>{{ joke.id }}</b>
+        </div>
+        <hr>
+        <button class="btn btn-primary" (click)="nextJoke">Next Joke</button>
+    </div>
+</div>
