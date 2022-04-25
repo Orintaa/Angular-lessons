@@ -1,4 +1,4 @@
-<div class="card" *ngIf="!isLoading">
+<div class="card" *ngIf="!isLoading && !isError">
     <div class="card-body">
         {{ joke.joke }}
         <hr>
@@ -9,11 +9,16 @@
             ID: <b>{{ joke.id }}</b>
         </div>
         <hr>
-        <button class="btn btn-primary" (click)="nextJoke">Next Joke</button>
+        <button class="btn btn-primary" (click)="nextJoke()">Next Joke</button>
     </div>
 </div>
-<div class="card" *ngIf="isLoading">
+<div class="card" *ngIf="isLoading && !isError">
     <div class="card-body">
         <div class="allert alert-info">Loading...</div>
+    </div>
+</div>
+<div class="card" *ngIf="isError">
+    <div class="card-body">
+        <div class="allert alert-danger">Ivyko klaida. Bandykite veliau.</div>
     </div>
 </div>

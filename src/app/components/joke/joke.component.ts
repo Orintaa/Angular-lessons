@@ -18,6 +18,7 @@ export class JokeComponent implements OnInit {
   };
 
   public isLoading:boolean = true;
+  public isError:boolean=false;
 
   constructor(private http:HttpClient) { }
 
@@ -27,10 +28,15 @@ export class JokeComponent implements OnInit {
 
   private loadJoke(){
     this.isLoading=true;
-    this.http.get<Joke>('https://v2.jokeapi.dev/joke/Any?type=single').subscribe( (response) => {
+    this.http.get<Joke>('https://v2.jokeapi.dev/joke/Any?type=single').subscribe({ next:(response) => {
       this.joke=response;
       this.isLoading=false;
-    })
+    },
+    error:(error) => {
+      this.isLoading=false;
+      this.isError=true;
+    }
+  })
   }
 
   nextJoke(){
