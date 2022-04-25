@@ -17,6 +17,8 @@ export class JokeComponent implements OnInit {
     type:''
   };
 
+  public isLoading:boolean = true;
+
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
@@ -24,8 +26,10 @@ export class JokeComponent implements OnInit {
   }
 
   private loadJoke(){
+    this.isLoading=true;
     this.http.get<Joke>('https://v2.jokeapi.dev/joke/Any?type=single').subscribe( (response) => {
       this.joke=response;
+      this.isLoading=false;
     })
   }
 

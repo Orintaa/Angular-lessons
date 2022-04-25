@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="!isLoading">
     <div class="card-body">
         {{ joke.joke }}
         <hr>
@@ -10,5 +10,10 @@
         </div>
         <hr>
         <button class="btn btn-primary" (click)="nextJoke">Next Joke</button>
+    </div>
+</div>
+<div class="card" *ngIf="isLoading">
+    <div class="card-body">
+        <div class="allert alert-info">Loading...</div>
     </div>
 </div>
